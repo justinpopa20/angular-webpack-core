@@ -8,25 +8,17 @@ module.exports = webpackMerge(commonConfig, {
 
     output: {
         path: helpers.root('dist'),
-        publicPath: 'http://localhost:3000/',
+        publicPath: '/',
         filename: '[name].js',
         chunkFilename: '[id].chunk.js'
     },
 
+    plugins: [
+        new ExtractTextPlugin('[name].css')
+    ],
+
     devServer: {
         historyApiFallback: true,
-        stats: 'minimal'/*,
-        TODO setup when REST service ready
-        proxy: {
-            '/api/**': {
-                target: 'http://localhost:8080/your-rest-service',
-                secure: false,
-                changeOrigin: true
-            }
-        }*/
-    },
-
-    plugins: [
-        new ExtractTextPlugin('styles.css')
-    ]
+        stats: 'minimal'
+    }
 });
