@@ -34,6 +34,7 @@
         "zone.js": "^0.8.20"
     },
     "devDependencies": {
+        "@angularclass/hmr": "^2.1.3",
         "@angularclass/hmr-loader": "^3.0.4",
         "@types/jasmine": "^2.5.54",
         "@types/jasminewd2": "^2.0.3",
